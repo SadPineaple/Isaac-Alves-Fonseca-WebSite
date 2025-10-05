@@ -1,374 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="LOGO.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="LOGO.ico" type="image/x-icon">
-  <title>Isaac Alves Fonseca</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="LOGO.ico">
+  <title>Portfólio de Soluções - Isaac Alves Fonseca</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background-color: #1e1e1e;
-      color: #f5f5f5;
+    :root {
+      --gold: #d4af37;
+      --black: #0a0a0a;
     }
-
-    p, li, .descricao {
-      font-family: Arial, sans-serif;
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
     }
-
-    header {
-      background-color: #121212;
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 2px solid #d4af37;
-    }
-
-    .logo-header {
-      width: 140px;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-
-    header h1 {
-      color: #d4af37;
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #f5f5f5;
-      font-weight: bold;
-    }
-
-    .carousel-wrapper {
-      position: relative;
-      width: 100%;
-      height: 55vh;
-      overflow: hidden;
-      background-color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .carousel-wrapper img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
-      flex-shrink: 0;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .hero h2 {
-      color: white;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      color: #ccc;
-      font-size: 1.2rem;
-    }
-
-    .button {
-      background-color: #d4af37;
-      color: #1e1e1e;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 4px;
-      font-size: 1rem;
-      font-weight: bold;
-      margin-top: 2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #ffffff;
-      color: #d4af37;
-      border: 1px solid #d4af37;
-    }
-
-    .button:active {
-      background-color: #2a2a2a;
-      color: #f5f5f5;
-      border: 1px solid #ffffff;
-    }
-
-    section {
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    section h3 {
-      color: #d4af37;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    section p, section li {
-      color: #e0e0e0;
-    }
-
-    .top {
-      font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
-    .planos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .plano {
-      background-color: #2a2a2a;
-      padding: 1.5rem;
-      border: 1px solid #d4af37;
-      border-radius: 8px;
-      position: relative;
-      padding-bottom: 4rem;
-    }
-
-    .plano h4 {
-      color: #fff;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    .plano .descricao {
-      color: #dcdcdc;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 2.5rem;
-    }
-
-    .plano .button {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      padding-top: 0.6rem;
-      padding-bottom: 0.6rem;
-    }
-
-    footer {
-  background-color: #121212;
-  padding: 2.5rem 1.5rem;
-  border-top: 2px solid #d4af37;
-  color: #aaa;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.footer-content h3 {
-  color: #d4af37;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.contato-info {
-  margin: 1.5rem 0;
-  text-align: left;
-  display: inline-block;
-}
-
-.contato-info ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.contato-info li {
-  margin: 0.8rem 0;
-  font-size: 1rem;
-}
-
-.contato-info a {
-  color: #d4af37;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contato-info a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.footer-copyright {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-    a.botao-contato {
-      display: inline-block;
-      background-color: white;
-      color: #1e1e1e;
-      padding: 0.5rem 1.2rem;
-      margin-top: 1rem;
-      border-radius: 4px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    a.botao-contato:hover {
-      background-color: #d4af37;
-      color: #ffffff;
-      border: 1px solid #ffffff;
-    }
-
-    a.botao-contato:active {
-      background-color: #1e1e1e;
-      color: #d4af37;
-      border: 1px solid #ffffff;
-    }
-
-    .separador-imagem {
-  width: 100%;
-  height: 55vh;
-  overflow: hidden;
-  background-color: #000;
-}
-
-.separador-imagem img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
   </style>
 </head>
-<body>
-  <header>
-    <img src="IAF.png" alt="Isaac Alves Fonseca" class="logo-header" />
-    <h1>Isaac Alves Fonseca</h1>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#planos">Planos</a>
-      <a href="#contato">Contato</a>
-    </nav>
+<body class="bg-[var(--black)] text-gray-200 font-sans">
+
+  <!-- Header -->
+  <header class="bg-[var(--black)] border-b border-[var(--gold)] fixed top-0 left-0 w-full z-50 shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-semibold text-[var(--gold)]">Isaac Alves Fonseca</h1>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="#planos" class="hover:text-[var(--gold)] transition">Planos</a>
+        <a href="#sobre" class="hover:text-[var(--gold)] transition">Sobre</a>
+        <a href="#contato" class="hover:text-[var(--gold)] transition">Contato</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="carousel-wrapper" id="carouselWrapper">
-    <img src="img1.jpg" alt="Imagem 1">
-    <img src="img2.jpg" alt="Imagem 2">
-    <img src="img3.jpg" alt="Imagem 3">
-    <img src="img4.jpg" alt="Imagem 4">
-    <img src="img5.jpg" alt="Imagem 5">
-  </div>
-
-  <section class="hero">
-    <h2>Transforme seu negócio</h2>
-    <p class="top">Sou um arquiteto de soluções, analista de dados e desenvolvedor de softwares personalizados, dedicado a atender às demandas críticas da sua empresa — aumentando a eficácia, a organização e a velocidade na execução de processos.</p>
-    <a href="#contato" class="button">Fale comigo</a>
+  <!-- Hero Section -->
+  <section class="text-center py-28 bg-gradient-to-r from-black via-gray-900 to-black text-white mt-16">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[var(--gold)]">Soluções Inteligentes para o seu Negócio</h2>
+    <p class="text-lg mb-10 max-w-2xl mx-auto text-gray-300">Transforme processos em resultados com tecnologia sob medida e soluções sob demanda.</p>
+    <a href="#planos" class="bg-[var(--gold)] text-black font-semibold px-8 py-3 rounded-lg hover:bg-yellow-500 transition">Conheça os Planos</a>
   </section>
 
-  <div class="separador-imagem">
-    <img src="img6.jpg" alt="Imagem decorativa separando seções">
-  </div>
+  <!-- Planos -->
+  <section id="planos" class="py-20 max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-14 text-[var(--gold)]">Planos de Soluções</h2>
+    <div class="grid md:grid-cols-3 gap-10">
 
-  <section id="sobre">
-    <h3>Sobre o Serviço</h3>
-    <p>Especializado em criar soluções personalizadas para empresas — combinando a arquitetura de softwares, a análise de dados e o desenvolvimento de ferramentas — com o objetivo de atender às demandas críticas do negócio, aumentando a eficácia, a organização e os resultados.</p>
-    <p><em>"Encaixo as peças do negócio para que tudo funcione de forma simples, coesa e inteligente."</em></p>
-  </section>
-
-  <div class="separador-imagem">
-    <img src="img7.jpg" alt="Imagem decorativa separando seções">
-  </div>
-
-  <section id="planos">
-    <h3>Planos e Serviços</h3>
-    <div class="planos">
-      <div class="plano">
-        <h4>Arquitetura de soluções</h4>
-        <div class="descricao">
-          Transformo desafios de negócio em soluções personalizadas, integrando análise de dados, desenvolvimento de softwares e automação de processos para apoiar o crescimento da sua empresa.
+      <!-- Essencial -->
+      <div class="bg-[#111] rounded-2xl border border-gray-700 shadow-lg flex flex-col justify-between p-8 hover:border-[var(--gold)] transition">
+        <div>
+          <h3 class="text-2xl font-semibold mb-4 text-[var(--gold)]">Essencial</h3>
+          <p class="text-gray-400 mb-6">Soluções rápidas e acessíveis. Ideal para empresas que buscam eficiência sem complexidade técnica.</p>
+          <ul class="divide-y divide-gray-700 text-gray-300">
+            <li class="py-3">Relatórios automatizados simples (Excel, Google Sheets, Power BI básico)</li>
+            <li class="py-3">Criação de site institucional simples (WordPress/HTML estático)</li>
+            <li class="py-3">Automatização de tarefas operacionais (planilhas, scripts Python)</li>
+            <li class="py-3">Configuração de canais de contato (formulários, integração com e-mail/WhatsApp)</li>
+            <li class="py-3">Organização e estruturação inicial de banco de dados pequeno</li>
+          </ul>
         </div>
-        <a href="https://wa.me/5514998093166?text=Olá%20Isaac%2C%20tudo%20bem%3F%20Me%20interessei%20pelo%20pacote%20de%20arquitetura%20de%20soluções.%20Vamos%20conversar%20para%20desenvolver%20as%20soluções%20e%20ajudarmos%20meu%20negócio%20a%20crescer%3F
-        " class="button">Descobrir</a>
+        <div class="mt-8">
+          <a href="#contato" class="block text-center bg-[var(--gold)] text-black py-3 rounded-lg font-medium hover:bg-yellow-500 transition">Descubra</a>
+        </div>
       </div>
-      <div class="plano">
-        <h4>Análise de dados</h4>
-        <div class="descricao">
-          Transformo dados em informações estratégias para apoiar a tomada de decisão e impulsionar o crescimento do seu negócio.
+
+      <!-- Completo -->
+      <div class="bg-[#111] rounded-2xl border border-gray-700 shadow-lg flex flex-col justify-between p-8 hover:border-[var(--gold)] transition">
+        <div>
+          <h3 class="text-2xl font-semibold mb-4 text-[var(--gold)]">Completo</h3>
+          <p class="text-gray-400 mb-6">Soluções integradas e personalizadas, ideais para empresas que desejam evoluir seus processos.</p>
+          <ul class="divide-y divide-gray-700 text-gray-300">
+            <li class="py-3">Dashboards interativos e análise de dados (Power BI, Tableau, Dash, Streamlit)</li>
+            <li class="py-3">Modelos preditivos simples (previsão de vendas, análise de churn)</li>
+            <li class="py-3">Integração de sistemas (APIs, bancos de dados, plataformas de vendas)</li>
+            <li class="py-3">Desenvolvimento de sistemas internos sob demanda</li>
+            <li class="py-3">Implementação de rotinas de backup básico</li>
+          </ul>
         </div>
-        <a href="https://wa.me/5514998093166?text=Olá%20Isaac%2C%20tudo%20bem%3F%20Me%20interessei%20pelo%20pacote%20de%20análise%20de%20dados.%20Vamos%20conversar%20para%20desenvolver%20as%20soluções%20e%20ajudarmos%20meu%20negócio%20a%20crescer%3F
-        " class="button">Desvendar</a>
+        <div class="mt-8">
+          <a href="#contato" class="block text-center bg-[var(--gold)] text-black py-3 rounded-lg font-medium hover:bg-yellow-500 transition">Melhore</a>
+        </div>
       </div>
-      <div class="plano">
-        <h4>Desenvolvimento de software estratégico</h4>
-        <div class="descricao">
-          Crio soluções simples, customizadas e de baixa complexidade para atender às demandas específicas do seu negócio — aumentando a eficácia, a organização e os resultados.
+
+      <!-- Premium -->
+      <div class="bg-[#111] rounded-2xl border border-gray-700 shadow-lg flex flex-col justify-between p-8 hover:border-[var(--gold)] transition">
+        <div>
+          <h3 class="text-2xl font-semibold mb-4 text-[var(--gold)]">Premium</h3>
+          <p class="text-gray-400 mb-6">Foco em inovação e inteligência artificial para gerar vantagem competitiva e automação estratégica.</p>
+          <ul class="divide-y divide-gray-700 text-gray-300">
+            <li class="py-3">Modelos avançados de machine learning (classificação, NLP, visão computacional)</li>
+            <li class="py-3">Implementação de IA aplicada ao negócio (chatbots, análise de imagens, QA)</li>
+            <li class="py-3">Arquitetura de dados escalável (pipelines ETL, nuvem)</li>
+            <li class="py-3">Consultoria de Business Intelligence com métricas personalizadas</li>
+          </ul>
         </div>
-        <a href="https://wa.me/5514998093166?text=Olá%20Isaac%2C%20tudo%20bem%3F%20Me%20interessei%20pelo%20pacote%20de%20desenvolvimento%20estratégico%20de%20software.%20Vamos%20conversar%20para%20desenvolver%20as%20soluções%20e%20ajudarmos%20meu%20negócio%20a%20crescer%3F
-        " class="button">Solucionar</a>
+        <div class="mt-8">
+          <a href="#contato" class="block text-center bg-[var(--gold)] text-black py-3 rounded-lg font-medium hover:bg-yellow-500 transition">Inove</a>
+        </div>
       </div>
     </div>
   </section>
-  
-  <div class="separador-imagem">
-    <img src="img8.jpg" alt="Imagem decorativa separando seções">
-  </div>
 
-  <section id="contato">
-    <h3>Contato</h3>
-    <p>Vamos conversar sobre como posso te ajudar?</p>
-    <a href="https://wa.me/14998093166" class="botao-contato">Chamar no WhatsApp</a>
+  <!-- Sobre -->
+  <section id="sobre" class="bg-[#0e0e0e] py-20 border-t border-[var(--gold)]">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-[var(--gold)]">Sobre</h2>
+      <p class="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
+        Sou <span class="text-[var(--gold)] font-medium">Isaac Alves Fonseca</span>, desenvolvedor e arquiteto de soluções para negócios.  
+        Trabalho com automação, análise de dados e inteligência artificial, ajudando empresas a transformar processos em resultados.
+        Meu foco é oferecer soluções eficientes, escaláveis e adaptadas à realidade de cada cliente.
+      </p>
+    </div>
   </section>
 
-  <footer>
-    <div class="footer-content">
-      <h3>Gostou do meu trabalho?</h3>
-      <p>Posso estar sempre disponível para ajudar a transformar seu negócio com resultados reais! 🚀</p>
-      
-      <div class="contato-info">
-        <p>📩 Entre em contato:</p>
-        <ul>
-          <li>📞 WhatsApp: <a href="https://wa.me/5514998093166">(14) 99809-3166</a></li>
-          <li>📧 E-mail: <a href="mailto:isacalvesfonseca@gmail.com">isacalvesfonseca@gmail.com</a></li>
-          <li>📷 Instagram: <a href="https://www.instagram.com/isaacalvesfonsecaanalyst/" target="_blank">@isaacalvesfonsecaanalyst</a></li>
-          <li>💼 LinkedIn: <a href="https://linkedin.com/in/isaac-alves-fonseca/" target="_blank">linkedin.com/in/isaac-alves-fonseca</a></li>
-        </ul>
-      </div>
-      
-      <p class="footer-copyright">&copy; 2025 Isaac Alves Fonseca. Todos os direitos reservados.</p>
-    </div>
+  <!-- Contato -->
+  <section id="contato" class="py-20 max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6 text-[var(--gold)]">Entre em Contato</h2>
+    <p class="text-gray-400 mb-8">Envie uma mensagem e descubra como posso ajudar o seu negócio a evoluir com tecnologia.</p>
+    <a href="https://wa.me/seu_numero_aqui" target="_blank" class="inline-block bg-[var(--gold)] text-black py-3 px-8 rounded-lg font-medium hover:bg-yellow-500 transition">
+      Fale pelo WhatsApp
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-[var(--gold)] py-6 text-center text-gray-500">
+    <p>© 2025 Isaac Alves Fonseca. Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-    const wrapper = document.getElementById('carouselWrapper');
-    let scrollPos = 0;
-    const imageWidth = wrapper.clientWidth;
-    const totalImages = wrapper.children.length;
-
-    setInterval(() => {
-      scrollPos += imageWidth;
-      if (scrollPos >= imageWidth * totalImages) {
-        scrollPos = 0;
-      }
-      wrapper.scrollTo({ left: scrollPos, behavior: 'smooth' });
-    }, 5000);
-  </script>
 </body>
 </html>
